@@ -1,0 +1,24 @@
+Vulnerability name: Reflected XSS
+
+ 
+What is Reflected XSS?
+Reflected XSS attacks, also known as non-persistent attacks, occur when a malicious script is reflected off of a web application to the victim's browser. The script is activated through a link, which sends a request to a website with a vulnerability that enables execution of malicious scripts.
+
+
+Steps to reproduce this vulnerability:
+
+1. go to the search engine and paste this payload
+</title><script>alert("open bug bounty");</script>
+
+2.you will get openbugbounty as a popup
+
+3.if you want to get cookie exploitation then paste this payload on search engine
+</title><script>alert(document.cookie);</script>
+
+
+Impact of Reflected XSS?
+View any information that the user is able to view. Modify any information that the user is able to modify. Initiate interactions with other application users, including malicious attacks, that will appear to originate from the initial victim user
+
+
+Solution to Avoid Reflected XSS?
+careful input validation and context-sensitive encoding provide the first line of defense against reflected XSS.
